@@ -927,6 +927,7 @@ namespace dotBunny.Unity
         {
             EditorApplication.playmodeStateChanged -= OnPlaymodeStateChanged;
             EditorApplication.playmodeStateChanged += OnPlaymodeStateChanged;
+
         }
 
         /// <summary>
