@@ -17,7 +17,7 @@ public class setMatrixMap
             myWindow.Show();//展示
         }
 
-        static int Rows, Columns;
+        static int Rows, Columns, txt_n;
         static string mapName;
         static UnityEngine.Object prt;
         public UnityEngine.Object mapPar;
@@ -36,6 +36,12 @@ public class setMatrixMap
             GUILayout.Label("输入欲生成地图的名字:");
             EditorGUILayout.Space();
             mapName = EditorGUILayout.TextField("地图名字:", mapName);
+
+            EditorGUILayout.Space();
+            EditorGUILayout.Space();
+            GUILayout.Label("地图编号前的文字位数");
+            EditorGUILayout.Space();
+            txt_n = EditorGUILayout.IntField("文字位数:", txt_n);
 
             EditorGUILayout.Space();
             EditorGUILayout.Space();
@@ -90,7 +96,7 @@ public class setMatrixMap
                         // Debug.Log(int.Parse(item.name.Substring(6)));
 
                         //用从文件名中截取的序号重新生成一个array
-                        int n = int.Parse(item.name.Substring(6)) - 1;
+                        int n = int.Parse(item.name.Substring(txt_n)) - 1;
                         sortSets[n] = item;
 
                     }
@@ -146,7 +152,17 @@ public class setMatrixMap
                     String Name = mapName + "_" + (Column_i + (Columns * (Row_i - 1)));         //循环生成名称
 
                     Material material = new Material(Shader.Find("Legacy Shaders/Diffuse"));    //循环生成材质
-                    AssetDatabase.CreateAsset(material, "Assets/Map/" + mapName + "/mtl/" + Name + ".mat");     //保存材质到路径
+
+                    string t;
+                    if (mapName.Length > 5 )
+                    {
+                        t=mapName.Substring(0,5);
+                        Debug.Log(t);
+                    }else{
+                        t=mapName;
+                    }
+
+                    AssetDatabase.CreateAsset(material, "Assets/Map/" + t + "/mskMTL/" + Name + ".mat");     //保存材质到路径
 
 
                     GameObject mapTiled = GameObject.CreatePrimitive(PrimitiveType.Quad);       //循环生成面片

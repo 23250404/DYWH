@@ -5,7 +5,8 @@ Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: P0501
   m_Shader: {fileID: 4800000, guid: c0da4ce06f68e9242970cd548a67dfd5, type: 3}
   m_ShaderKeywords: _ALPHAPREMULTIPLY_ON
@@ -55,7 +56,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _RenderTexture:
-        m_Texture: {fileID: 8400000, guid: 8a25b153db8f33b47a9fda804b4e3802, type: 2}
+        m_Texture: {fileID: 8400000, guid: 4988067fdf08b1f44b781f7193ad776d, type: 2}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _color:
